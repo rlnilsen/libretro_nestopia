@@ -8,5 +8,8 @@ Modification of the Nestopia libretro core specifically for use with NES Tetris.
 2. Extract 'nestopia_tetris_libretro.dll' to your RetroArch 'cores' folder.
 3. Extract 'nestopia_tetris_libretro.dll' to your RetroArch 'info' folder.
 4. Create folder 'C:\nestetris\'.
-5. Start RetroArch and play NES Tetris using the 'Nestopia Tetris' core.
-6. Use [chewie](https://github.com/rlnilsen/chewie) to process the generated files in 'C:\nestetris\'.
+
+## How to use
+
+1. Start RetroArch and play NES Tetris using the 'Nestopia Tetris' core.
+2. Use [chewie](https://github.com/rlnilsen/chewie) to process the generated files in 'C:\nestetris\'.
