@@ -1060,6 +1060,57 @@ void retro_run(void)
          video_width - (overscan_h ? 2 * dif : 0),
          Api::Video::Output::HEIGHT - (overscan_v ? 16 : 0),
          pitch);
+
+   Core::Machine& machineGet = emulator;
+   Nes::byte* ram = machineGet.cpu.GetRam();
+   
+   static Nes::byte gameModeStatePrev = 0;
+   Nes::byte gameModeState = ram[0xa7];
+   if (gameModeState == 2 && gameModeStatePrev == 1)
+   {
+      Nes::byte* nmtmem = machineGet.ppu.GetNmtMem()[0];
+
+      time_t rawtime;
+      struct tm * timeinfo;
+      char buffer [80];
+      time (&rawtime);
+      timeinfo = localtime (&rawtime);
+      strftime (buffer,80,"%Y%m%d-%H%M%S",timeinfo);
+
+      char base[256];
+      sprintf(base, "c:\\nestetris\\%s-begin.nam", buffer);
+
+      std::ofstream out_tmp(base,std::ifstream::out|std::ifstream::binary);
+      if (out_tmp.is_open())
+      {
+         out_tmp.write((const char*)nmtmem, 1024);
+      }
+   }
+   gameModeStatePrev = gameModeState;
+
+   static Nes::byte playStatePrev = 0;
+   Nes::byte playState = ram[0x48];
+   if (playState == 10 && playStatePrev != 10)
+   {
+      Nes::byte* nmtmem = machineGet.ppu.GetNmtMem()[0];
+
+      time_t rawtime;
+      struct tm * timeinfo;
+      char buffer [80];
+      time (&rawtime);
+      timeinfo = localtime (&rawtime);
+      strftime (buffer,80,"%Y%m%d-%H%M%S",timeinfo);
+
+      char base[256];
+      sprintf(base, "c:\\nestetris\\%s-end.nam", buffer);
+
+      std::ofstream out_tmp(base,std::ifstream::out|std::ifstream::binary);
+      if (out_tmp.is_open())
+      {
+         out_tmp.write((const char*)nmtmem, 1024);
+      }
+   }
+   playStatePrev = playState;
 }
 
 static void extract_basename(char *buf, const char *path, size_t size)
