@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <sstream>
 #include <fstream>
+#include <time.h>
 
 #include "../source/core/api/NstApiMachine.hpp"
 #include "../source/core/api/NstApiEmulator.hpp"
@@ -446,7 +447,7 @@ void retro_set_controller_port_device(unsigned port, unsigned device)
 void retro_get_system_info(struct retro_system_info *info)
 {
    memset(info, 0, sizeof(*info));
-   info->library_name     = "Nestopia";
+   info->library_name     = "Nestopia Tetris";
 #ifdef GIT_VERSION
    info->library_version  = NST_VERSION GIT_VERSION;
 #else

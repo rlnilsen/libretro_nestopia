@@ -48,7 +48,7 @@ prefix := /usr
 libdir := $(prefix)/lib
 
 LIBRETRO_DIR := libretro
-TARGET_NAME := nestopia
+TARGET_NAME := nestopia_tetris
 
 SPACE :=
 SPACE := $(SPACE) $(SPACE)
