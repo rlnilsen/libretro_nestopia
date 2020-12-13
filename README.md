@@ -4,10 +4,11 @@ Modification of the Nestopia libretro core specifically for use with NES Tetris.
 
 ## How to install
 
-1. Download zip file from [Releases](https://github.com/rlnilsen/libretro_nestopia_tetris/releases).
-2. Extract 'nestopia_tetris_libretro.dll' to your RetroArch 'cores' folder.
-3. Extract 'nestopia_tetris_libretro.dll' to your RetroArch 'info' folder.
-4. Create folder 'C:\nestetris\'.
+1. Install [RetroArch](https://www.retroarch.com/).
+2. Download zip file from [Releases](https://github.com/rlnilsen/libretro_nestopia_tetris/releases).
+3. Extract 'nestopia_tetris_libretro.dll' to your RetroArch 'cores' folder.
+4. Extract 'nestopia_tetris_libretro.dll' to your RetroArch 'info' folder.
+5. Install [chewie](https://github.com/rlnilsen/chewie).
 
 ## How to use
 
