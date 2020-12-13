@@ -1,3 +1,3 @@
 # libretro_nestopia_tetris
 
-A snapshot of the nametable will be saved in folder c:\nestetris at every Tetris game start and game over.
+Modification of the Nestopia libretro core. A snapshot of the screen (in form of a nametable dump) will be saved in folder c:\nestetris\ at every Tetris game start and game over.
