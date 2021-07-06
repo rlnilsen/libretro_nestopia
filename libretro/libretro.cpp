@@ -1417,12 +1417,14 @@ void retro_run(void)
       strftime (buffer,80,"%Y%m%d-%H%M%S",timeinfo);
 
       char base[256];
-      sprintf(base, "c:\\nestetris\\%s-begin.nam", buffer);
+      //sprintf(base, "c:\\nestetris\\%s-begin.nam", buffer);
+      sprintf(base, "c:\\nestetris\\%s-begin.ram", buffer);
 
       std::ofstream out_tmp(base,std::ifstream::out|std::ifstream::binary);
       if (out_tmp.is_open())
       {
-         out_tmp.write((const char*)nmtmem, 1024);
+         //out_tmp.write((const char*)nmtmem, 1024);
+         out_tmp.write((const char*)ram, 2048);
       }
    }
    gameModeStatePrev = gameModeState;
@@ -1441,12 +1443,14 @@ void retro_run(void)
       strftime (buffer,80,"%Y%m%d-%H%M%S",timeinfo);
 
       char base[256];
-      sprintf(base, "c:\\nestetris\\%s-end.nam", buffer);
+      //sprintf(base, "c:\\nestetris\\%s-end.nam", buffer);
+      sprintf(base, "c:\\nestetris\\%s-end.ram", buffer);
 
       std::ofstream out_tmp(base,std::ifstream::out|std::ifstream::binary);
       if (out_tmp.is_open())
       {
-         out_tmp.write((const char*)nmtmem, 1024);
+         //out_tmp.write((const char*)nmtmem, 1024);
+         out_tmp.write((const char*)ram, 2048);
       }
    }
    playStatePrev = playState;
